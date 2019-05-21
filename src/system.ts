@@ -1,4 +1,4 @@
-import { Component } from "./component";
+import { Component, ComponentGuard } from "./component";
 import { Entity } from "./entity";
 
 /**
@@ -48,7 +48,7 @@ export class System {
      * @param guard Type guard to filter component types with.
      */
     public getComponents<T extends Component = Component>(
-        guard: (el: Component) => el is T,
+        guard: ComponentGuard<T>,
     ): T[] {
         const list = this.entities.map((entity) => entity.getComponents(guard));
         const fin: T[] = [];
@@ -56,5 +56,14 @@ export class System {
             fin.concat(...l);
         }
         return fin;
+    }
+    /**
+     * Get all entities in this system that have at least one of a specific component type.
+     * @param guard The guard used to filter entities by component type.
+     */
+    public getEntitiesWithComponent<T extends Component = Component>(
+        guard: ComponentGuard<T>,
+    ): Entity[] {
+        return this.entities.filter((entity) => entity.hasComponent(guard));
     }
 }

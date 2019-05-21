@@ -1,5 +1,10 @@
 import { v4 } from "uuid";
-import { Component } from "./component";
+import { Component, ComponentGuard } from "./component";
+
+export interface IEntity {
+    uuid: string;
+    components: object[];
+}
 
 /**
  * Entity class. Add functionality by adding components.
@@ -27,9 +32,18 @@ export class Entity {
      * @param guard A type guard used to filter the component list.
      */
     public getComponents<T extends Component = Component>(
-        guard: (el: Component) => el is T,
+        guard: ComponentGuard<T>,
     ): T[] {
         return this.components.filter(guard);
+    }
+    /**
+     * Whether or not this entity has at least one of a specific type of component.
+     * @param guard The guard used to filter components by type.
+     */
+    public hasComponent<T extends Component = Component>(
+        guard: ComponentGuard<T>,
+    ): boolean {
+        return this.components.filter(guard).length > 0;
     }
     /**
      * Remove a single component from this entity.
@@ -45,8 +59,16 @@ export class Entity {
      * @param guard A type guard used when filtering out components that should be removed.
      */
     public removeComponents<T extends Component = Component>(
-        guard: (el: Component) => el is T,
+        guard: ComponentGuard<T>,
     ): void {
         this.components = this.components.filter((v) => !guard(v));
+    }
+    public serialize(): IEntity {
+        return {
+            uuid: this.uuid,
+            components: this.components.map((component) =>
+                component.serialize(),
+            ),
+        };
     }
 }

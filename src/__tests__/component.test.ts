@@ -4,6 +4,12 @@ class TestComponent extends ECS.Component {
     public test(): boolean {
         return true;
     }
+    public serialize(): object {
+        return { ok: true };
+    }
+    public deserialize(obj: object): TestComponent {
+        return new TestComponent();
+    }
 }
 
 test("component", () => {
