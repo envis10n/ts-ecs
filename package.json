@@ -1,6 +1,6 @@
 {
     "name": "ts-ecs",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "ECS for Typescript and Node projects.",
     "main": "dist/index.js",
     "types": "types/index.d.ts",

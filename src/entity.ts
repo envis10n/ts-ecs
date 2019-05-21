@@ -26,6 +26,7 @@ export class Entity {
      */
     public addComponent<T extends Component = Component>(component: T): void {
         this.components.push(component);
+        component.onComponentAttach(this);
     }
     /**
      * Return all components of a specific type.
@@ -53,6 +54,7 @@ export class Entity {
         component: T,
     ): void {
         this.components = this.components.filter((v) => v !== component);
+        component.onComponentDetach();
     }
     /**
      * Remove all components of a specific type.
@@ -61,7 +63,9 @@ export class Entity {
     public removeComponents<T extends Component = Component>(
         guard: ComponentGuard<T>,
     ): void {
-        this.components = this.components.filter((v) => !guard(v));
+        for (const component of this.components.filter((v) => guard(v))) {
+            this.removeComponent(component);
+        }
     }
     public serialize(): IEntity {
         return {
