@@ -38,7 +38,7 @@ Entity class. Add functionality by adding components.
 
 ⊕ **new Entity**(uuid?: *`string`*, components?: *[Component](component.md)[]*): [Entity](entity.md)
 
-*Defined in [entity.ts:16](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L16)*
+*Defined in [entity.ts:16](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L16)*
 
 **Parameters:**
 
@@ -59,7 +59,7 @@ ___
 
 **● components**: *[Component](component.md)[]*
 
-*Defined in [entity.ts:16](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L16)*
+*Defined in [entity.ts:16](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L16)*
 
 The component list for this entity.
 
@@ -70,7 +70,7 @@ ___
 
 **● uuid**: *`string`*
 
-*Defined in [entity.ts:18](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L18)*
+*Defined in [entity.ts:18](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L18)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **addComponent**<`T`>(component: *`T`*): `void`
 
-*Defined in [entity.ts:27](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L27)*
+*Defined in [entity.ts:27](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L27)*
 
 Add a component to this entity.
 
@@ -104,7 +104,7 @@ ___
 
 ▸ **getComponents**<`T`>(guard: *[ComponentGuard](../#componentguard)<`T`>*): `T`[]
 
-*Defined in [entity.ts:34](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L34)*
+*Defined in [entity.ts:35](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L35)*
 
 Return all components of a specific type.
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **hasComponent**<`T`>(guard: *[ComponentGuard](../#componentguard)<`T`>*): `boolean`
 
-*Defined in [entity.ts:43](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L43)*
+*Defined in [entity.ts:44](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L44)*
 
 Whether or not this entity has at least one of a specific type of component.
 
@@ -148,7 +148,7 @@ ___
 
 ▸ **removeComponent**<`T`>(component: *`T`*): `void`
 
-*Defined in [entity.ts:52](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L52)*
+*Defined in [entity.ts:53](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L53)*
 
 Remove a single component from this entity.
 
@@ -170,7 +170,7 @@ ___
 
 ▸ **removeComponents**<`T`>(guard: *[ComponentGuard](../#componentguard)<`T`>*): `void`
 
-*Defined in [entity.ts:61](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L61)*
+*Defined in [entity.ts:63](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L63)*
 
 Remove all components of a specific type.
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **serialize**(): [IEntity](../interfaces/ientity.md)
 
-*Defined in [entity.ts:66](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L66)*
+*Defined in [entity.ts:70](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/entity.ts#L70)*
 
 **Returns:** [IEntity](../interfaces/ientity.md)
 

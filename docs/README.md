@@ -14,6 +14,7 @@ Docs: Located conveniently in this repo under the docs folder.
 
 ### Interfaces
 
+* [IComponentBase](interfaces/icomponentbase.md)
 * [IEntity](interfaces/ientity.md)
 
 ### Type aliases
@@ -30,7 +31,7 @@ Docs: Located conveniently in this repo under the docs folder.
 
 **Ƭ ComponentGuard**: *`function`*
 
-*Defined in [component.ts:4](https://github.com/envis10n/ts-ecs/blob/37998b6/src/component.ts#L4)*
+*Defined in [component.ts:7](https://github.com/envis10n/ts-ecs/blob/2ca746a/src/component.ts#L7)*
 
 Type guard for Component and subclasses of Component.
 
