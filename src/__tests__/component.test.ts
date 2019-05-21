@@ -1,6 +1,10 @@
 import * as ECS from "../";
+import { Component, ComponentGuard } from "../component";
 
-class TestComponent extends ECS.Component {
+class TestComponent extends Component {
+    public static guard(): ComponentGuard<TestComponent> {
+        return (el): el is TestComponent => el instanceof TestComponent;
+    }
     public test(): boolean {
         return true;
     }
@@ -17,9 +21,10 @@ test("component", () => {
     const entity = system.spawn();
     const comp = new TestComponent();
     entity.addComponent(comp);
-    const list = entity.getComponents<TestComponent>(
-        (el): el is TestComponent => el instanceof TestComponent,
-    );
+    const list = entity.getComponents(TestComponent.guard());
     expect(list.length).toBe(1);
+    expect(system.getEntitiesWithComponent(TestComponent.guard()).length).toBe(
+        1,
+    );
     expect(list.map((com) => com.test())).toStrictEqual([true]);
 });

@@ -14,6 +14,7 @@ An entity component. Base class should be extended and built upon.
 
 * [deserialize](component.md#deserialize)
 * [serialize](component.md#serialize)
+* [guard](component.md#guard)
 
 ---
 
@@ -25,13 +26,15 @@ An entity component. Base class should be extended and built upon.
 
 ▸ **deserialize**(obj: *`object`*): [Component](component.md)
 
-*Defined in [component.ts:13](https://github.com/envis10n/ts-ecs/blob/34df4af/src/component.ts#L13)*
+*Defined in [component.ts:29](https://github.com/envis10n/ts-ecs/blob/37998b6/src/component.ts#L29)*
+
+The method used to deserialize a JSON object into a component of this type. Please override in subclasses.
 
 **Parameters:**
 
-| Name | Type |
-| ------ | ------ |
-| obj | `object` |
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| obj | `object` |  The object to deserialize into this component. |
 
 **Returns:** [Component](component.md)
 
@@ -42,9 +45,24 @@ ___
 
 ▸ **serialize**(): `object`
 
-*Defined in [component.ts:10](https://github.com/envis10n/ts-ecs/blob/34df4af/src/component.ts#L10)*
+*Defined in [component.ts:21](https://github.com/envis10n/ts-ecs/blob/37998b6/src/component.ts#L21)*
+
+The method used to serialize this component to a JSON object. Please override in subclasses.
 
 **Returns:** `object`
+
+___
+<a id="guard"></a>
+
+### `<Static>` guard
+
+▸ **guard**(): [ComponentGuard](../#componentguard)<[Component](component.md)>
+
+*Defined in [component.ts:14](https://github.com/envis10n/ts-ecs/blob/37998b6/src/component.ts#L14)*
+
+Static method that returns a ComponentGuard for this component type. Please override in subclasses.
+
+**Returns:** [ComponentGuard](../#componentguard)<[Component](component.md)>
 
 ___
 

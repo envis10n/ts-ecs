@@ -23,7 +23,7 @@
 
 **● components**: *`object`[]*
 
-*Defined in [entity.ts:6](https://github.com/envis10n/ts-ecs/blob/34df4af/src/entity.ts#L6)*
+*Defined in [entity.ts:6](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L6)*
 
 ___
 <a id="uuid"></a>
@@ -32,7 +32,7 @@ ___
 
 **● uuid**: *`string`*
 
-*Defined in [entity.ts:5](https://github.com/envis10n/ts-ecs/blob/34df4af/src/entity.ts#L5)*
+*Defined in [entity.ts:5](https://github.com/envis10n/ts-ecs/blob/37998b6/src/entity.ts#L5)*
 
 ___
 

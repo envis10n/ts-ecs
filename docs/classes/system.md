@@ -33,7 +33,7 @@ Entity System
 
 **● entities**: *[Entity](entity.md)[]* =  []
 
-*Defined in [system.ts:11](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L11)*
+*Defined in [system.ts:11](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L11)*
 
 Entity list.
 
@@ -47,7 +47,7 @@ ___
 
 ▸ **exists**(uuid: *`string`*): `boolean`
 
-*Defined in [system.ts:29](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L29)*
+*Defined in [system.ts:29](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L29)*
 
 Check if a uuid is already used by an existing entity.
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **find**(uuid: *`string`*): [Entity](entity.md) \| `undefined`
 
-*Defined in [system.ts:22](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L22)*
+*Defined in [system.ts:22](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L22)*
 
 Find an entity by uuid.
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **getComponents**<`T`>(guard: *[ComponentGuard](../#componentguard)<`T`>*): `T`[]
 
-*Defined in [system.ts:50](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L50)*
+*Defined in [system.ts:50](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L50)*
 
 Return all components of a certain type from all entities managed by this system.
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **getEntitiesWithComponent**<`T`>(guard: *[ComponentGuard](../#componentguard)<`T`>*): [Entity](entity.md)[]
 
-*Defined in [system.ts:64](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L64)*
+*Defined in [system.ts:64](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L64)*
 
 Get all entities in this system that have at least one of a specific component type.
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **load**(uuid: *`string`*, components: *[Component](component.md)[]*): [Entity](entity.md)
 
-*Defined in [system.ts:37](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L37)*
+*Defined in [system.ts:37](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L37)*
 
 Load an existing entity.
 
@@ -149,7 +149,7 @@ ___
 
 ▸ **spawn**(): [Entity](entity.md)
 
-*Defined in [system.ts:15](https://github.com/envis10n/ts-ecs/blob/34df4af/src/system.ts#L15)*
+*Defined in [system.ts:15](https://github.com/envis10n/ts-ecs/blob/37998b6/src/system.ts#L15)*
 
 Spawn a new entity.
 

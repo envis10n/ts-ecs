@@ -30,7 +30,7 @@ Docs: Located conveniently in this repo under the docs folder.
 
 **Ƭ ComponentGuard**: *`function`*
 
-*Defined in [component.ts:4](https://github.com/envis10n/ts-ecs/blob/34df4af/src/component.ts#L4)*
+*Defined in [component.ts:4](https://github.com/envis10n/ts-ecs/blob/37998b6/src/component.ts#L4)*
 
 Type guard for Component and subclasses of Component.
 
