@@ -23,6 +23,15 @@ export class World {
         const id = this.entities.push(components) - 1;
         return id;
     }
+    public despawn<T extends ComponentTuple>(entity: T): boolean {
+        const id = this.entities.findIndex((ent) => entity === ent);
+        if (id !== -1) {
+            this.entities[id] = undefined;
+            return true;
+        } else {
+            return false;
+        }
+    }
     public register<T extends ComponentTuple>(
         system: SystemCallback<T>,
         guard: SystemGuard<T>,
