@@ -1,69 +1,14 @@
-import { Component, ComponentGuard } from "./component";
+import { Component } from "./component";
 import { Entity } from "./entity";
 
-/**
- * Entity System
- */
-export class System {
-    /**
-     * Entity list.
-     */
-    private entities: Entity[] = [];
-    /**
-     * Spawn a new entity.
-     */
-    public spawn(): Entity {
-        return this.entities[this.entities.push(new Entity()) - 1];
-    }
-    /**
-     * Find an entity by uuid.
-     * @param uuid The uuid of the entity to find.
-     */
-    public find(uuid: string): Entity | undefined {
-        return this.entities.find((e) => e.uuid === uuid);
-    }
-    /**
-     * Check if a uuid is already used by an existing entity.
-     * @param uuid The uuid of the entity to find.
-     */
-    public exists(uuid: string): boolean {
-        return this.entities.find((e) => e.uuid === uuid) !== undefined;
-    }
-    /**
-     * Load an existing entity.
-     * @param uuid The uuid of the entity.
-     * @param components Any components to add to the entity.
-     */
-    public load(uuid: string, components: Component[]): Entity {
-        if (!this.exists(uuid)) {
-            return this.entities[
-                this.entities.push(new Entity(uuid, components)) - 1
-            ];
-        } else {
-            throw new Error("Cannot load entity: UUID is already in use.");
-        }
-    }
-    /**
-     * Return all components of a certain type from all entities managed by this system.
-     * @param guard Type guard to filter component types with.
-     */
-    public getComponents<T extends Component = Component>(
-        guard: ComponentGuard<T>,
-    ): T[] {
-        const list = this.entities.map((entity) => entity.getComponents(guard));
-        const fin: T[] = [];
-        for (const l of list) {
-            fin.concat(...l);
-        }
-        return fin;
-    }
-    /**
-     * Get all entities in this system that have at least one of a specific component type.
-     * @param guard The guard used to filter entities by component type.
-     */
-    public getEntitiesWithComponent<T extends Component = Component>(
-        guard: ComponentGuard<T>,
-    ): Entity[] {
-        return this.entities.filter((entity) => entity.hasComponent(guard));
-    }
+export type SystemCallback<T> = (entity: T, id: number, delta: number) => void;
+export type SystemGuard<T extends Array<Component<any>>> = (
+    entity: Entity<Array<Component<any>>>,
+    index: number,
+    array: Array<Entity<Array<Component<any>>>>,
+) => entity is T;
+
+export interface System<T extends Array<Component<any>>> {
+    callback: SystemCallback<T>;
+    guard: SystemGuard<T>;
 }

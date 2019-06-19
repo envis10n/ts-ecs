@@ -1,4 +1,4 @@
-// Re-export the classes.
-export { Entity } from "./entity";
-export { Component, ComponentGuard } from "./component";
+export { World, ComponentTuple, EntityGuard } from "./world";
 export { System } from "./system";
+export { Component } from "./component";
+export { Entity } from "./entity";
