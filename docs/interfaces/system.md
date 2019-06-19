@@ -25,7 +25,7 @@
 
 **● callback**: *[SystemCallback](../#systemcallback)<`T`>*
 
-*Defined in [system.ts:12](https://github.com/envis10n/ts-ecs/blob/3e2827e/src/system.ts#L12)*
+*Defined in [system.ts:12](https://github.com/envis10n/ts-ecs/blob/173742f/src/system.ts#L12)*
 
 ___
 <a id="guard"></a>
@@ -34,7 +34,7 @@ ___
 
 **● guard**: *[SystemGuard](../#systemguard)<`T`>*
 
-*Defined in [system.ts:13](https://github.com/envis10n/ts-ecs/blob/3e2827e/src/system.ts#L13)*
+*Defined in [system.ts:13](https://github.com/envis10n/ts-ecs/blob/173742f/src/system.ts#L13)*
 
 ___
 

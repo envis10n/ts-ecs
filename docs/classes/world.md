@@ -23,6 +23,7 @@
 
 ### Methods
 
+* [despawn](world.md#despawn)
 * [get](world.md#get)
 * [register](world.md#register)
 * [run](world.md#run)
@@ -40,7 +41,7 @@
 
 ⊕ **new World**(tickFrequency?: *`number`*): [World](world.md)
 
-*Defined in world.ts:18*
+*Defined in [world.ts:18](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L18)*
 
 **Parameters:**
 
@@ -60,7 +61,7 @@ ___
 
 **● entities**: *`Array`<[Entity](../#entity)<[ComponentTuple](../#componenttuple)>>* =  []
 
-*Defined in world.ts:13*
+*Defined in [world.ts:13](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L13)*
 
 ___
 <a id="lasttick"></a>
@@ -69,7 +70,7 @@ ___
 
 **● lastTick**: *`number`* =  Date.now()
 
-*Defined in world.ts:16*
+*Defined in [world.ts:16](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L16)*
 
 ___
 <a id="nexttick"></a>
@@ -78,7 +79,7 @@ ___
 
 **● nextTick**: *`number`* = 0
 
-*Defined in world.ts:18*
+*Defined in [world.ts:18](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L18)*
 
 ___
 <a id="shouldrun"></a>
@@ -87,7 +88,7 @@ ___
 
 **● shouldRun**: *`boolean`* = false
 
-*Defined in world.ts:15*
+*Defined in [world.ts:15](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L15)*
 
 ___
 <a id="systems"></a>
@@ -96,7 +97,7 @@ ___
 
 **● systems**: *`Array`<[System](../interfaces/system.md)<`any`>>* =  []
 
-*Defined in world.ts:14*
+*Defined in [world.ts:14](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L14)*
 
 ___
 <a id="tickperiod"></a>
@@ -105,19 +106,39 @@ ___
 
 **● tickPeriod**: *`number`*
 
-*Defined in world.ts:17*
+*Defined in [world.ts:17](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L17)*
 
 ___
 
 ## Methods
 
+<a id="despawn"></a>
+
+###  despawn
+
+▸ **despawn**<`T`>(entity: *`T`*): `boolean`
+
+*Defined in [world.ts:26](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L26)*
+
+**Type parameters:**
+
+#### T :  [ComponentTuple](../#componenttuple)
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| entity | `T` |
+
+**Returns:** `boolean`
+
+___
 <a id="get"></a>
 
 ###  get
 
 ▸ **get**<`T`>(id: *`number`*): [Entity](../#entity)<`T`>
 
-*Defined in world.ts:43*
+*Defined in [world.ts:52](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L52)*
 
 **Type parameters:**
 
@@ -137,7 +158,7 @@ ___
 
 ▸ **register**<`T`>(system: *[SystemCallback](../#systemcallback)<`T`>*, guard: *[SystemGuard](../#systemguard)<`T`>*): `void`
 
-*Defined in world.ts:26*
+*Defined in [world.ts:35](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L35)*
 
 **Type parameters:**
 
@@ -158,7 +179,7 @@ ___
 
 ▸ **run**(): `void`
 
-*Defined in world.ts:35*
+*Defined in [world.ts:44](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L44)*
 
 **Returns:** `void`
 
@@ -169,7 +190,7 @@ ___
 
 ▸ **spawn**<`T`>(...components: *`T`*): `number`
 
-*Defined in world.ts:22*
+*Defined in [world.ts:22](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L22)*
 
 **Type parameters:**
 
@@ -189,7 +210,7 @@ ___
 
 ▸ **stop**(): `void`
 
-*Defined in world.ts:40*
+*Defined in [world.ts:49](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L49)*
 
 **Returns:** `void`
 
@@ -200,7 +221,7 @@ ___
 
 ▸ **tick**(): `void`
 
-*Defined in world.ts:46*
+*Defined in [world.ts:55](https://github.com/envis10n/ts-ecs/blob/173742f/src/world.ts#L55)*
 
 **Returns:** `void`
 
